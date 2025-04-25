@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Name": "生命流逝",
+    "Desc": "每秒降低3%的最大生命值，持续3秒，最高叠加1层",
+    "BuffInfoConfig": {
+      "NumericTypes": [
+        1002
+      ],
+      "BuffAddType": 1,
+      "NumericValues": [
+        30000
+      ],
+      "BuffInfoTimer": 3,
+      "BuffActionType": 3,
+      "CycleEndType": 1,
+      "Interval": 1,
+      "MaxLayer": 1
+    },
+    "Icon": "UI_Skill_Icon_9"
+  }
+]

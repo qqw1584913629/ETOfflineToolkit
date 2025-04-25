@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "languageName": "简体中文",
+    "languageType": 8,
+    "languageIcon": "Icon_Flag_Chn",
+    "languageFonts": "LXGWWenKai-Regular SDF"
+  },
+  {
+    "id": 2,
+    "languageName": "繁体中文",
+    "languageType": 9,
+    "languageIcon": "Icon_Flag_Chn",
+    "languageFonts": "NotoSerifHK-Regular SDF"
+  },
+  {
+    "id": 3,
+    "languageName": "English",
+    "languageType": 14,
+    "languageIcon": "Icon_Flag_Eng",
+    "languageFonts": "LXGWWenKai-Regular SDF"
+  },
+  {
+    "id": 4,
+    "languageName": "日本語",
+    "languageType": 27,
+    "languageIcon": "Icon_Flag_Jpn",
+    "languageFonts": "NotoSerifJP-Regular SDF"
+  },
+  {
+    "id": 5,
+    "languageName": "한국인",
+    "languageType": 28,
+    "languageIcon": "Icon_Flag_Kor",
+    "languageFonts": "NotoSerifKR-Regular SDF"
+  }
+]

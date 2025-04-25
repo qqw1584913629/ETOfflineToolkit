@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionaries>
+  <Dictionary Language="ChineseTraditional">
+    <String Key="Example.Text" Value="This is an &lt;b&gt;Any Localization&lt;/b&gt; example text." />
+  </Dictionary>
+</Dictionaries>
