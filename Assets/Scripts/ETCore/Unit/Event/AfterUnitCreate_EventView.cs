@@ -14,15 +14,22 @@ namespace MH
             GameObject go = GameObjectPoolHelper.GetObjectFromPool(unit.Config.Name);
             if (!go)
             {
-                var resourcesComponent = scene.GetComponent<ResourcesComponent>();
-                var obj = await resourcesComponent.LoadAssetAsync<GameObject>(unit.Config.Name);
-                go = UnityEngine.Object.Instantiate(obj, globalComponent.UnitRoot, true);
+                await GameObjectPoolHelper.InitPoolWithPathAsync(unit.Config.Name, unit.Config.Name, 1);
+                go = GameObjectPoolHelper.GetObjectFromPool(unit.Config.Name);
             }
             go.transform.SetParent(globalComponent.UnitRoot);    
             var gameObjectComponent = unit.AddComponent<GameObjectComponent>();
             gameObjectComponent.GameObject = go;
             var unitMonoBehaviour = go.GetComponent<UnitMonoBehaviour>() ?? go.AddComponent<UnitMonoBehaviour>();
             unitMonoBehaviour.SetUnitId(unit.Id);
+
+
+            var animatorComponent = unit.AddComponent<AnimatorComponent>();
+            animatorComponent.AddAnimationEventByFrame("Idle", 60, () =>
+            {
+                Debug.Log("Idle");
+            });
+            unit.AddComponent<MoveComponent>();
             await ETTask.CompletedTask;
         }
     }

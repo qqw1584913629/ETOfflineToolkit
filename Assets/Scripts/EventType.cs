@@ -24,4 +24,18 @@ namespace MH
     {
         
     }
+    public struct OperaTrigger
+    {
+        public float X;
+        public float Y;
+        public float Z;
+    }
+    public struct MoveStart
+    {
+        public long UnitId;
+    }
+    public struct MoveFinish
+    {
+        public long UnitId;
+    }
 }

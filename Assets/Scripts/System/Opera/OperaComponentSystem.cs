@@ -14,6 +14,8 @@ namespace MH
     {
         protected override void Awake(OperaComponent self)
         {
+            self.TriggerMask |= LayerMask.GetMask("Ground");
+            self.MainCamera = Camera.main;
         }
     }
     [EntitySystem]
@@ -23,6 +25,18 @@ namespace MH
         {
             if (Input.GetMouseButtonDown(0))
             {
+                Ray ray = self.MainCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, self.TriggerMask))
+                {
+                    EventSystem.Instance.PublishAsync(self.Scene, new OperaTrigger()
+                    {
+                        X = hit.point.x,
+                        Y = hit.point.y,
+                        Z = hit.point.z
+                    }).Coroutine();
+                }
             }
         }
     }

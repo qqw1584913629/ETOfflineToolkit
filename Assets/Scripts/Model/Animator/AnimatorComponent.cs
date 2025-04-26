@@ -7,8 +7,7 @@ namespace MH
     {
         None,
         Idle,
-        Walk,
-        Eat,
+        Run,
     }
     public class AnimatorComponent : Entity, IAwake, IUpdate, IDestroy
     {

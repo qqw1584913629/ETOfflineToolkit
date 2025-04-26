@@ -302,5 +302,51 @@ namespace MH
 
             clip.events = new AnimationEvent[0];
         }
+
+        public static void AddAnimationEventByFrame(this AnimatorComponent self, string clipName, int frame, Action callback)
+        {
+            AnimationClip clip;
+            if (!self.animationClips.TryGetValue(clipName, out clip))
+            {
+                Debug.LogError($"找不到动画片段: {clipName}");
+                return;
+            }
+
+            // 获取动画的帧率
+            float frameRate = clip.frameRate;
+            
+            // 将帧数转换为时间
+            float time = frame / frameRate;
+
+            // 检查帧数是否超出动画总帧数
+            float totalFrames = clip.length * frameRate;
+            if (frame < 0 || frame > totalFrames)
+            {
+                Debug.LogError($"事件帧数 {frame} 超出动画 {clipName} 的总帧数 {totalFrames}");
+                return;
+            }
+
+            string eventId = $"{clipName}_frame_{frame}";
+            
+            // 检查是否已存在相同时间点的事件
+            if (clip.events.Any(e => 
+                e.functionName == "HandleAnimationEvent" && 
+                Math.Abs(e.time - time) < 0.001f))
+            {
+                Debug.LogWarning($"动画 {clipName} 在第 {frame} 帧已存在事件，将被覆盖");
+                RemoveAnimationEvent(self, clipName, time);
+            }
+
+            self.EventBridge.RegisterEvent(eventId, callback);
+
+            AnimationEvent animEvent = new AnimationEvent
+            {
+                functionName = "HandleAnimationEvent",
+                time = time,
+                stringParameter = eventId
+            };
+
+            clip.AddEvent(animEvent);
+        }
     }
 }

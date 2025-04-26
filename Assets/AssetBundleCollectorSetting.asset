@@ -86,7 +86,15 @@ MonoBehaviour:
       GroupDesc: 
       AssetTags: 
       ActiveRuleName: EnableGroup
-      Collectors: []
+      Collectors:
+      - CollectPath: Assets/Bundles/Unit
+        CollectorGUID: 8e31d133d82805e4ebf8c8e63a8b1858
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
     - GroupName: Fonts
       GroupDesc: 
       AssetTags: 

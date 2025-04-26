@@ -1,3 +1,4 @@
+using cfg;
 using UnityEngine;
 
 namespace MH
@@ -7,6 +8,15 @@ namespace MH
     {
         protected override async ETTask Run(Scene scene, SceneChangeFinish a)
         {
+            switch (scene.SceneName)
+            {
+                case "Game":
+                {
+                    UnitConfig unitConfig = ConfigsSingleton.Instance.Tables.TbUnitConfig.Get(1);
+                    await UnitFactory.CreateUnit(scene, unitConfig);
+                    break;
+                }
+            }
             await ETTask.CompletedTask;
         }
     }

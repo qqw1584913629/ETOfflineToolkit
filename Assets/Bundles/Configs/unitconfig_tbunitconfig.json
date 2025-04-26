@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "name": "勇敢的冒险者",
-    "icon": "勇敢的冒险者_Icon",
-    "halficon": "勇敢的冒险者_HalfIcon",
+    "name": "Unit",
+    "icon": "Unit_Icon",
+    "halficon": "Unit_HalfIcon",
     "desc": ""
   }
 ]

@@ -12,6 +12,7 @@ namespace MH
             scene.AddComponent<UIPathComponent>();
             scene.AddComponent<UIEventComponent>();
             scene.AddComponent<CurrentSceneComponent>();
+            scene.AddComponent<PlayerInfoComponent>();
             var uiComponent = scene.AddComponent<UIComponent>();
 
             scene.AddComponent<UnitComponent>();
