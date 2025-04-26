@@ -33,10 +33,11 @@ Table of Contents
     - [x] Configuration System
     - [x] Async Support
     - [x] Simple Buff System
+    - [x] Multi-language Support
     - [ ] .....
 
 ### Quick Start
-Documentation in preparation.....
+Please refer to the [documentation](https://etofflinetoolkit-doc.website/) for project structure and development guidelines.
 
 ### Additional Information
 
