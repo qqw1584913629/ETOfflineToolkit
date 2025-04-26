@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace MH
 {
-    public abstract class Entity : IDisposable
+    public abstract class Entity : IDisposable, IPool
     {
         private Dictionary<long, Entity> _children;
         [JsonIgnore]
@@ -124,6 +124,12 @@ namespace MH
         public bool IsComponent => this._isComponent;
         private bool _isRegister = false;
         public bool IsRegister => this._isRegister;
+
+        private bool _isFromPool = false;
+
+        bool IPool.IsFromPool { get => _isFromPool; set => _isFromPool = value; }
+
+
         protected virtual void RegisterSystem()
         {
             EntitySystemSingleton.Instance.RegisterSystem(this);
