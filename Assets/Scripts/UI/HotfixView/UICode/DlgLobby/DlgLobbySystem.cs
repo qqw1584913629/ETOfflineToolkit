@@ -31,6 +31,22 @@ namespace MH
 		{
 			self.AddUIScrollItems(ref self.ScrollItemServers, 100);
 			self.View.ELoopScrollList_ServerLoopHorizontalScrollRect.SetVisible(true, 100);
+
+
+			using (ListComponent<int> list = ListComponent<int>.Create())
+			{
+				list.Add(1);
+				list.Add(2);
+				list.Add(3);
+				list.Add(4);
+				list.Add(5);
+				list.Add(6);
+				foreach (var item in list)
+				{
+					Debug.Log(item);
+				}
+			}
+
 		}
 
 		public static void OnServerItemLoopRefreshHandler(this DlgLobby self, Transform transform, int index)

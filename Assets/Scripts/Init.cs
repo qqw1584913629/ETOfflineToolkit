@@ -29,6 +29,7 @@ namespace MH
             World.Instance.AddSingleton<DatasSingleton>();
             World.Instance.AddSingleton<BuffActionDispatcher>();
             World.Instance.AddSingleton<LocalizationSingleton>();
+            World.Instance.AddSingleton<ObjectPool>();
 
             EventSystem.Instance.PublishAsync(Root, new Main_Init()).Coroutine();
         }
