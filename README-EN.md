@@ -37,7 +37,7 @@ Table of Contents
     - [ ] .....
 
 ### Quick Start
-Please refer to the [documentation](https://etofflinetoolkit-doc.website/) for project structure and development guidelines.
+Please refer to the [documentation](https://etofflinetoolkit-doc.website/en/) for project structure and development guidelines.
 
 ### Additional Information
 
